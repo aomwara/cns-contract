@@ -49,8 +49,4 @@ contract CNSController {
     ) internal {
         ens.setSubnodeRecord(_node, label, owner, resolverAddress, 0);
     }
-
-    function get101() public returns (uint256) {
-        return 101;
-    }
 }
