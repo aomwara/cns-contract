@@ -17,17 +17,20 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
-  hardhat: {
-    chainId: 1,
-    forking: {
-      url: "https://eth-mainnet.alchemyapi.io/v2/w6Ol6mdlPVKcEh_Eu5BEyPIDKUsIxs47",
+  defaultNetwork: 'hardhat',
+  networks: {
+    hardhat: {
+      chainId: 31337,
+      forking: {
+        url: "https://eth-mainnet.alchemyapi.io/v2/w6Ol6mdlPVKcEh_Eu5BEyPIDKUsIxs47",
+      },
     },
-  },
-  live: {
-    url: "https://eth-mainnet.alchemyapi.io/v2/w6Ol6mdlPVKcEh_Eu5BEyPIDKUsIxs47",
-    accounts: [
-      "34afec3c082278a4478e340f8a17f0f471d2f064d7d2dd03d5d4e1cc87f80f17",
-    ],
+    production: {
+      url: "https://eth-mainnet.alchemyapi.io/v2/w6Ol6mdlPVKcEh_Eu5BEyPIDKUsIxs47",
+      accounts: [
+        "34afec3c082278a4478e340f8a17f0f471d2f064d7d2dd03d5d4e1cc87f80f17",
+      ],
+    },
   },
   solidity: "0.8.15",
 };
